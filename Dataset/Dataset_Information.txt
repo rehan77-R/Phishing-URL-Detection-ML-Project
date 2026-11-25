@@ -1,0 +1,49 @@
+DATASET INFORMATION
+===================
+
+Name        : PhiUSIIL Phishing URL Dataset (UCI name: PhiUSIIL Phishing URL (Website))
+Source      : UCI Machine Learning Repository, dataset id 967
+              https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
+Also on     : Mendeley Data, https://data.mendeley.com/datasets/shwpxscxy2
+Creators    : Arvind Prasad and Shalini Chandra
+Paper       : A. Prasad and S. Chandra, "PhiUSIIL: A diverse security profile empowered phishing URL
+              detection framework based on similarity index and incremental learning,"
+              Computers & Security, vol. 136, Art. no. 103545, Jan. 2024,
+              doi: 10.1016/j.cose.2023.103545
+License     : Creative Commons Attribution 4.0 International (CC BY 4.0)
+File used   : PhiUSIIL_Phishing_URL_Dataset.csv (54.2 MB)
+
+WHAT THE DATA CONTAINS
+----------------------
+Each row is one URL and its web page.
+Rows (original)  : 235,795   (134,850 legitimate and 100,945 phishing, as listed on the UCI page)
+Columns          : 56 = 5 text columns + 50 numeric features + 1 label
+Missing values   : none (checked in the notebook)
+Text columns     : FILENAME, URL, Domain, TLD, Title
+Label            : label = 1 means LEGITIMATE, label = 0 means PHISHING (the label is inverted).
+                   All phishing metrics in this project use pos_label = 0.
+
+COLUMNS USED IN THIS PROJECT
+----------------------------
+Model inputs     : the 50 numeric features (19 binary and 31 count or ratio features).
+Not model inputs : FILENAME (UCI says it can be ignored), URL, TLD, Title.
+Domain           : used only to build the domain group split (robustness check).
+
+CLEANING STEPS (done in the notebook)
+-------------------------------------
+1. 425 repeated URLs removed (first row kept).
+2. 808 rows with identical feature values removed (first row kept).
+   Rows with identical features always had the same label (0 conflicting groups).
+3. Rows after cleaning: 234,562  (134,850 legitimate = 57.49%, 99,712 phishing = 42.51%).
+   All 1,233 removed rows were phishing rows.
+
+SPLIT
+-----
+Stratified 70/30 split, random_state = 42:
+Train 164,193 rows, test 70,369 rows (57.49% legitimate in both).
+Group split by Domain (robustness check): train 163,465 rows, test 71,097 rows, no shared domain.
+
+FEATURE GROUPS USED IN THE URL-ONLY STUDY
+-----------------------------------------
+The grouping is based on feature names (our own grouping, not from the paper):
+22 URL features, 28 page features. See the notebook for the full lists.

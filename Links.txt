@@ -1,0 +1,20 @@
+LINKS
+=====
+
+1. Dataset source (UCI):
+   https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+dataset
+
+2. Dataset (Mendeley Data, same authors):
+   https://data.mendeley.com/datasets/shwpxscxy2
+
+3. Original paper (DOI):
+   https://doi.org/10.1016/j.cose.2023.103545
+
+4. Google Drive presentation video (view access only for the teacher):
+   >>> ADD LINK HERE <<<
+
+5. GitHub repository:
+   >>> ADD LINK HERE <<<
+
+6. Colab notebook (optional):
+   >>> ADD LINK HERE (or delete this line) <<<
