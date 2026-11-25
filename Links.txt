@@ -14,7 +14,7 @@ LINKS
    >>> ADD LINK HERE <<<
 
 5. GitHub repository:
-   >>> ADD LINK HERE <<<
+   https://github.com/rehan77-R/Phishing-URL-Detection-ML-Project
 
 6. Colab notebook (optional):
    >>> ADD LINK HERE (or delete this line) <<<
